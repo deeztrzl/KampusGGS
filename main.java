@@ -39,7 +39,7 @@ public class Main {
     }
 
     static int kruskal(int n, List<Edge> edges) {
-        Collections.sort(edges); 
+        Collection.sort(edges); 
 
         int[] parent = new int[n + 1];
         int[] rank = new int[n + 1];
@@ -70,32 +70,6 @@ public class Main {
         return edgesTerpakai == n - 1 ? totalMst : -1;
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        while (scanner.hasNext()) {
-            int n = scanner.nextInt(); 
-            int m = scanner.nextInt(); 
-
-            List<Edge> edges = new ArrayList<>();
-
-            for (int i = 0; i < m; i++) {
-                int u = scanner.nextInt();
-                int v = scanner.nextInt();
-                int weight = scanner.nextInt();
-                edges.add(new Edge(u, v, weight));
-            }
-
-            int result = kruskalMST(n, edges);
-
-            if (result == -1) {
-                System.out.println("TIDAK MEMUNGKINKAN");
-            } else {
-                System.out.println(result);
-            }
-        }
-
-        scanner.close();
-    }
+    //new code here
 }
 
