@@ -37,5 +37,39 @@ public class Main {
             }
         }
     }
-//new code here
+
+    static int kruskal(int n, List<Edge> edges) {
+        Collection.sort(edges); 
+
+        int[] parent = new int[n + 1];
+        int[] rank = new int[n + 1];
+
+        for (int i = 1; i <= n; i++) {
+            parent[i] = i;
+            rank[i] = 0;
+        }
+
+        int totalMst = 0;
+        int edgesTerpakai = 0;
+
+        for (Edge edge : edges) {
+            int u = edge.u;
+            int v = edge.v;
+
+            int setU = find(parent, u);
+            int setV = find(parent, v);
+
+            if (setU != setV) {
+                totalMst += edge.weight;
+                union(parent, rank, setU, setV);
+                edgesTerpakai++;
+            }
+            
+            if (edgesTerpakai == n - 1) break;
+        }
+        return edgesTerpakai == n - 1 ? totalMst : -1;
+    }
+
+    //new code here
 }
+
