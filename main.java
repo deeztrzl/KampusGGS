@@ -9,7 +9,7 @@ public class Main {
             this.v = v;
             this.weight = weight;
         }
-
+        @Override
         public int compareTo(Edge other) {
             return this.weight - other.weight;
         }
