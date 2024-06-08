@@ -1,0 +1,82 @@
+class Edge:
+    function __init__(u, v, weight):
+        this.u = u								O(1)
+        this.v = v								O(1)
+        this.weight = weight							O(1)
+    
+    function compareTo(other):
+        return this.weight - other.weight					O(1)
+
+function find(parent, i):
+    if parent[i] != i:								O(1)
+        parent[i] = find(parent, parent[i])  			O(α(N))
+    return parent[i]
+
+function union(parent, rank, x, y):						
+    rootX = find(parent, x)							O(α(N))
+    rootY = find(parent, y)							O(α(N))
+    
+    if rootX != rootY:								O(1)
+        if rank[rootX] > rank[rootY]:						O(1)
+            parent[rootY] = rootX						O(1)
+        else if rank[rootX] < rank[rootY]:					O(1)
+            parent[rootX] = rootY						O(1)
+        else:									O(1)
+            parent[rootY] = rootX						O(1)
+            rank[rootX] += 1							O(1)
+
+function kruskalMST(n, edges):							
+    sort(edges)									O(E log E)
+
+    parent = array of size n+1 initialized to index 			O(N)
+    rank = array of size n+1 initialized to zero				O(N)
+    
+    mstWeight = 0								O(1)
+    edgesUsed = 0								O(1)
+
+    for each edge in edges:							O(E)
+        u = edge.u								O(1)
+        v = edge.v								O(1)
+        
+        setU = find(parent, u)							O(α(N))
+        setV = find(parent, v)							O(α(N))
+        
+        if setU != setV:							O(1)
+            mstWeight += edge.weight						O(1)
+            union(parent, rank, setU, setV)					O(α(N))
+            edgesUsed += 1							O(1)
+
+        if edgesUsed == n - 1:							O(1)
+            break
+    
+    if edgesUsed == n - 1:							O(1)
+        return mstWeight
+    else:									O(1)
+        return -1  
+
+function main():
+    read n  # Number of nodes							O(1)
+    read m  # Number of edges							O(1)
+    
+    edges = empty list								O(1)
+    	
+    for i from 1 to m:								O(M)
+        read u, v, weight							O(1)
+        add new Edge(u, v, weight) to edges					O(1)
+    
+    result = kruskalMST(n, edges)						O(E log E + E α(N)).
+    
+    if result == -1:								O(1)
+        print "TIDAK MEMUNGKINKAN"						O(1)
+    else:									O(1)
+        print result								O(1)
+
+
+Perhitungan
+[O(1)+(O(1)+O(1)+O(1))+O(1)] + [O(1)+O(1)+O(α(N))+O(1)] + [O(α(N))+O(α(N))+O(1)+O(1)+O(1)+O(1)+O(1)+O(1)+O(1)+O(1)+O(1)] + [O(ElogE)+O(N)+O(N)+O(N)⋅(O(1)+O(1)+O(E)+O(1)+O(1)+O(α(N))+O(α(N))+O(1)+O(1)+O(α(N))+O(1)+O(1)+O(E)⋅(O(1)+O(α(N)))] + [O(1)+O(M)*(O(1)+O(1))+O(1)+O(M)*(O(1)+O(1)+O(1)+O(1))+O(ElogE)+O(N)+O(E⋅α(N))+O(1)+O(1)+O(1)+O(1)]
+
+[O(5)] + [O(3)+O(α(N))] + [O(α(N))+O(9)] + [O(ElogE)+O(2N)+O(E⋅α(N))+O(1)] + [O(2M)+O(4M)+O(ElogE)+O(E⋅α(N))+O(N)+O(1)]
+
+= O(1) + O(α(N)) + O(α(N)) + O(ElogE)+O(N)+O(E⋅α(N)) + O(M)+O(ElogE)+O(N)+O(E⋅α(N))
+
+= O(ElogE)
