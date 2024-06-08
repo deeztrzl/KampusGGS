@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.*;
 public class Main {
 
     static class Edge implements Comparable<Edge> {
@@ -86,7 +86,7 @@ public class Main {
                 edges.add(new Edge(u, v, weight));
             }
 
-            int result = kruskalMST(n, edges);
+            int result = kruskal(n, edges);
 
             if (result == -1) {
                 System.out.println("TIDAK MEMUNGKINKAN");
