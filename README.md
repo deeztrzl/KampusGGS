@@ -6,9 +6,9 @@ Kampus GGS sedang membangun gedung baru di pusat kota Alaska. Saat ini, sebanyak
 
 Untuk menyelesaikan permasalahan tersebut, para pejabat di Kampus GGS ingin membuat jalan/koridor sehingga semua gedung yang ada bisa saling terhubung dan dapat diakses dengan mudah serta nyaman. Mahasiswa dapat pergi dari satu gedung ke gedung lain dengan melalui satu atau beberapa jalan/koridor yang tersedia.
 
-Karena kondisi geografis yang tidak memungkinkan untuk setiap gedung memiliki akses jalan/koridor langsung ke setiap gedung lain dan juga biaya pembangunan yang terbatas, Anda diminta untuk membuat program yang dapat membantu para pejabat di Kampus GGS mengambil keputusan.
+Karena kondisi geografis yang tidak memungkinkan untuk setiap gedung memiliki akses jalan/koridor langsung ke setiap gedung lain dan juga biaya pembangunan yang terbatas,  diminta program yang dapat membantu para pejabat di Kampus GGS mengambil keputusan.
 
-Program yang Anda buat nantinya akan menerima daftar jalan/koridor yang dapat dibangun beserta biaya pembangunannya (untuk setiap jalur). Keluaran dari program tersebut adalah suatu keputusan apakah dengan jalan/koridor tersebut semua gedung dapat terhubung atau tidak. Jika tidak, maka tampilkan pesan “TIDAK MEMUNGKINKAN”. Jika iya, tampilkan total biaya pembangunan jalan/koridor yang paling minimum.
+Program akan menerima daftar jalan/koridor yang dapat dibangun beserta biaya pembangunannya (untuk setiap jalur). Keluaran dari program tersebut adalah suatu keputusan apakah dengan jalan/koridor tersebut semua gedung dapat terhubung atau tidak. Jika tidak, maka tampilkan pesan “TIDAK MEMUNGKINKAN”. Jika iya, tampilkan total biaya pembangunan jalan/koridor yang paling minimum.
 
 ## The TEAM:
 
