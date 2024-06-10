@@ -64,7 +64,7 @@ function main():
         read u, v, weight							O(1)
         add new Edge(u, v, weight) to edges					O(1)
     
-    result = kruskalMST(n, edges)						O(E log E + E α(N)).
+    result = kruskalMST(n, edges)						O(E log E + (N) + E α(N)).
     
     if result == -1:								O(1)
         print "TIDAK MEMUNGKINKAN"						O(1)
